@@ -16,12 +16,12 @@
     <div class="collapse navbar-collapse" id="navbar-collapse-nav">
       <ul class="nav navbar-nav">
         <li><a ng-click="changeDashType('home')" ng-class="{active: (isDashType('home') || isDashType(undefined))}">{{'DASHBOARD.HOME' | translate}}</a></li>
-        <li ng-if="$root.settings && !$root.getSetting('hide-dash-sections').parsedValue">
+        <!-- <li ng-if="$root.settings && !$root.getSetting('hide-dash-sections').parsedValue">
           <a ng-click="changeDashType('discover-shows')" ng-class="{active: (isDashType('discover-shows'))}">{{'DASHBOARD.TV_SHOWS' | translate}}</a>
         </li>
         <li ng-if="$root.settings && !$root.getSetting('hide-dash-sections').parsedValue">
           <a ng-click="changeDashType('discover-movies')" ng-class="{active: (isDashType('discover-movies'))}">{{'DASHBOARD.MOVIES' | translate}}</a>
-        </li>
+        </li> -->
         <li ng-if="$root.settings && !$root.getSetting('hide-dash-sections').parsedValue && $root.getSetting('hide-mylist-button').parsedValue != true">
           <a ng-click="changeDashType('watchlist')" ng-class="{active: (isDashType('watchlist'))}">{{'DASHBOARD.MY_LIST' | translate}}</a>
         </li>
@@ -67,12 +67,15 @@
           <span class="form-control-feedback ion-android-search" aria-hidden="true"></span>
         </div>
       </li>
-      <sec:ifLoggedIn>
+      <!-- <sec:ifLoggedIn>
         <li ng-if="$root.getSetting('hide-dash-button').parsedValue != true">
           <a ui-sref="dash">{{'DASHBOARD.TITLE' | translate}}</a>
         </li>
+      </sec:ifLoggedIn> -->
+      <sec:ifLoggedIn>
+            <li><a ui-sref="request" href="https://tosecurityandbeyond.mynetgear.com/2hbd2p59ckzbax6kzswj46s3r39j7/" target="_self">Request Content</a>
+        		</li>
       </sec:ifLoggedIn>
-
       <sec:ifAnyGranted roles="ROLE_CONTENT_MANAGER">
         <li><a ui-sref="admin.shows">{{'MANAGE_CONTENT' | translate}}</a></li>
       </sec:ifAnyGranted>

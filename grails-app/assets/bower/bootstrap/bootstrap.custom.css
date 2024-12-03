@@ -4120,6 +4120,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     position: relative;
     display: block;
 }
+
+@media (min-width: 992px) {
+    .nav > li.dash-section {
+        display: none !important;
+    }
+}
+
 .nav > li > a {
     position: relative;
     display: block;

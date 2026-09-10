@@ -138,6 +138,9 @@ class VideoService {
       if(params.title){
         title =~ "%${params.title}%"
       }
+      if(params.apiId){
+        apiId == params.apiId.toString()
+      }
       if(genreId){
         genre{
           id == genreId
@@ -187,6 +190,9 @@ class VideoService {
 
       if(params.name){
         name =~ "%${params.name}%"
+      }
+      if(params.apiId){
+        apiId == params.apiId.toString()
       }
 
       if(genreId){
